@@ -1,0 +1,259 @@
+/* ---------- CSS variables ---------- */
+:root {
+  --header-height: 8vh;
+  --header-height-half: 4vh;
+  --max-width: 1200px;
+  --min-width: 320px;
+  /* Colors */
+  --hue-dark: 210;
+  --hue-light: 0;
+  --dark-color: hsl(var(--hue-dark), 33%, 9%);
+  --dark-color-alt: hsl(var(--hue-dark), 33%, 14%);
+  --light-color: hsl(var(--hue-light), 0%, 94%);
+  --light-color-alt: hsl(var(--hue-light), 0%, 80%);
+  --white-color: #fff;
+  --black-color: #000;
+
+  /* Fonts sizes */
+  --text-font: 'Exo 2', sans-serif;
+  --headline-font: 'Orbitron', sans-serif;
+  --h1-font-size: clamp(2rem, 0.9091rem + 5.4545vw, 5rem);
+  --h2-font-size: clamp(1.8rem, 1.3636rem + 2.1818vw, 3rem);
+  --h3-font-size: clamp(1.5rem, 1.3182rem + 0.9091vw, 2rem);
+  --big-font-size: clamp(1.8rem, 1.3636rem + 2.1818vw, 3rem);
+  --normal-font-size: clamp(1rem, 0.8182rem + 0.9091vw, 1.5rem);
+  --small-font-size: clamp(0.8rem, 0.7273rem + 0.3636vw, 1rem);
+  --nav-font-size: clamp(0.8rem, 0.7273rem + 0.3636vw, 1rem);
+}
+
+/* ---------- HTML Layout ---------- */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+
+  margin-top: var(--header-height);
+  font-family: var(--text-font);
+  font-size: var(--normal-font-size);
+  color: var(--light-color);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  min-height: var(--header-height);
+  z-index: 100;
+  background: var(--black-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background-color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+header {
+  font-family: var(--headline-font);
+  color: var(--light-color);
+  letter-spacing: 0.15em;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: 900;
+  margin: 15px 0px;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+  margin: 10px 0px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: 500;
+  margin: 5px 0px;
+}
+
+p {
+  font-size: var(--normal-font-size);
+  font-weight: 200;
+  margin: 5px 0px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 50vh;
+  z-index: 0;
+
+  padding: 10vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: var(--light-color-alt);
+}
+
+/* ---------- Responsive Navbar ---------- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+  width: 100%;
+  height: var(--header-height);
+
+  font-size: var(--nav-font-size);
+  text-transform: uppercase;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 0.3fr auto 1fr;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--header-height);
+  max-width: var(--max-width);
+  color: var(--light-color-alt);
+
+  width: 100%;
+}
+
+#nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  height: 100%;
+  width: auto;
+  margin-left: 20px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 101;
+}
+
+#nav-logo img {
+  height: 100%;
+  width: auto;
+  max-height: var(--header-height-half);
+  z-index: 102;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  list-style: none;
+  width: 75%;
+  margin-right: 20px;
+  justify-self: end;
+  z-index: 101;
+}
+
+.nav-links {
+  padding: 0px;
+  margin: 0 15px;
+
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: transparent;
+
+  z-index: 101;
+}
+
+.nav-links:hover {
+  color: var(--light-color);
+  border-color: var(--light-color);
+  transition: all 0.5s ease-out;
+}
+
+#nav-logo:hover {
+  color: var(--light-color);
+  transition: all 0.5s ease-out;
+}
+
+.menu-toggle .bar {
+  width: 35px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  z-index: 101;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  width: 100%;
+  background-color: var(--black-color);
+}
+
+/* scroll to the top button*/
+.scrollup {
+  position: fixed;
+  right: 2rem;
+  bottom: -4rem;
+  display: flex;
+  background-color: var(--light-color-alt);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  padding: 0.45rem;
+  z-index: 100;
+  transition: 0.4s;
+}
+
+.scrollup:hover {
+  background-color: var(--black-color);
+  opacity: 1;
+}
+
+.scrollup-icon {
+  color: var(--dark-color-alt);
+  font-size: 1.35rem;
+}
+
+.scrollup-icon:hover {
+  color: var(--light-color);
+}
+
+/* Show Scroll Up*/
+.show-scroll {
+  bottom: 3rem;
+}
