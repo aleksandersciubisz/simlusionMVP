@@ -343,6 +343,12 @@ p {
 }
 
 /*################################# ABOUT SECTION #################################*/
+#about h1 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: url(../img/background/red400x400.png);
+}
 /*################################# PRICING SECTION #################################*/
 
 /*################################# SCROLL UP BUTTON #################################*/
@@ -474,5 +480,10 @@ p {
 /*################################# DIV BACKGROUNDS  #################################*/
 div#element1 {
   background: url(../img/background/blue400x400.png) no-repeat center center/
+    cover;
+}
+
+div#element2 {
+  background: url(../img/background/red400x400.png) no-repeat center center/
     cover;
 }
