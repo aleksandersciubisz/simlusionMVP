@@ -1,10 +1,10 @@
 // Logo image hover substitution
 function hoverLogo(element) {
-  element.setAttribute('src', 'assets/img/logo/render3.png')
+  element.setAttribute('src', 'assets/img/logo/a1.png')
 }
 
 function unhoverLogo(element) {
-  element.setAttribute('src', 'assets/img/logo/render3.png')
+  element.setAttribute('src', 'assets/img/logo/a5.png')
 }
 
 // Hamburger menu
