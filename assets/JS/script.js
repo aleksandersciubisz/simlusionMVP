@@ -23,3 +23,16 @@ function scrollUp() {
   else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+// Scroll Reveal Animation
+const sr = ScrollReveal({
+  distance: '60px',
+  duration: 2000,
+  delay: 400,
+  reset: true,
+})
+
+sr.reveal(`.sr-down-fast`, { delay: 200, origin: 'bottom' })
+sr.reveal(`.sr-down-slow`, { delay: 400, origin: 'bottom' })
+sr.reveal(`.sr-top-fast`, { delay: 200, origin: 'top' })
+sr.reveal(`.sr-top-slow`, { delay: 400, origin: 'top' })
