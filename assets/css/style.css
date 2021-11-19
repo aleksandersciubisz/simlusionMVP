@@ -26,7 +26,7 @@
   --h3-font-size: clamp(1.618rem, 1.1792rem + 2.1939vw, 3.236rem);
 
   --normal-font-size: clamp(1rem, 0.7288rem + 1.3559vw, 2rem);
-  --small-font-size: clamp(0.618rem, 0.4504rem + 0.838vw, 1.236rem);
+  --small-font-size: clamp(0.8rem, 0.6818rem + 0.5912vw, 1.236rem);
 }
 
 /*################################# HTML LAYOUT  #################################*/
@@ -85,7 +85,7 @@ a {
   padding: 0;
   margin: 0;
   text-decoration: none;
-  color: var(--light-color-alt);
+  color: var(--light-color);
 }
 
 /*################################# TYPOGRAPHY  #################################*/
@@ -252,12 +252,9 @@ p {
 
 /*################################# ABOUT  #################################*/
 
-#about .flexBig a {
-  color: var(--light-color);
-}
-
 #about .flexBig a:hover {
   color: var(--red-color);
+  transition: 0.3s;
 }
 
 .aboutSocial {
@@ -310,10 +307,61 @@ p {
 }
 
 /*################################# PRICING  #################################*/
+
+#pricing span {
+  color: var(--red-color);
+}
 /*################################# CONTACT  #################################*/
+
+/*------ Contact Form --------*/
+.feedback-input {
+  color: var(--light-color);
+  font-family: var(--text-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--black-color);
+  border: 2px solid var(--blue-color);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.feedback-input:focus {
+  border: 2px solid var(--red-color);
+}
+
+textarea {
+  height: 180px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+[type='submit'] {
+  font-family: var(--headline-font);
+  width: 100%;
+  background: var(--black-color);
+  border: 2px solid var(--blue-color);
+  cursor: pointer;
+  color: var(--blue-color);
+  font-size: var(--normal-font-size);
+  padding: 10px 0;
+  transition: all 0.3s;
+  margin-top: -4px;
+}
+[type='submit']:hover {
+  color: var(--light-color);
+  background: var(--dark-color);
+}
 
 #contact .flexSmall {
   justify-content: space-evenly;
+}
+
+#contact .flexBig a:hover {
+  color: var(--red-color);
+  transition: 0.3s;
 }
 
 #contact .imga {
@@ -397,18 +445,68 @@ p {
 
   #home .flexSmall {
     flex: 1.618;
+    flex-direction: column;
   }
-  /*################################# ABOUT  #################################*/
 
-  /*################################# EXAMPLES  #################################*/
   /*################################# PRICING  #################################*/
-  /*################################# CONTACT  #################################*/
+  #pricing .flexSmall {
+    max-height: 20vh;
+  }
+
+  #pricing img {
+    max-height: 10vh;
+  }
 
   /*################################# FOOTER #################################*/
   .scrollup {
     padding: 0.25rem;
     right: 0.5rem;
     bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* Smaller BTN */
+
+  .btn {
+    width: 140px;
+    height: 40px;
+    padding: 7px;
+  }
+
+  .btn::before {
+    width: 130px;
+    height: 40px;
+  }
+
+  .btn::after {
+    width: 140px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .none500 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .none450 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .none350 {
+    display: none;
+  }
+}
+
+/*--------Height Queries---------*/
+@media screen and (max-height: 700px) {
+  .none700h {
+    display: none;
   }
 }
 /*################################# DIV BACKGROUNDS  #################################*/
