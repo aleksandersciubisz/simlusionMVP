@@ -26,7 +26,7 @@ window.addEventListener('scroll', scrollUp)
 
 // Scroll Reveal Animation
 const sr = ScrollReveal({
-  distance: '60px',
+  distance: '80px',
   duration: 2000,
   delay: 400,
   reset: true,
@@ -34,9 +34,9 @@ const sr = ScrollReveal({
 
 sr.reveal(`.sr-down-fast`, { delay: 200, origin: 'bottom' })
 sr.reveal(`.sr-down-slow`, { delay: 400, origin: 'bottom' })
-sr.reveal(`.sr-top-fast`, { delay: 200, origin: 'top' })
-sr.reveal(`.sr-top-slow`, { delay: 400, origin: 'top' })
-sr.reveal(`.sr-left-fast`, { delay: 200, origin: 'left' })
-sr.reveal(`.sr-left-slow`, { delay: 600, origin: 'left' })
-sr.reveal(`.sr-right-fast`, { delay: 200, origin: 'right' })
-sr.reveal(`.sr-right-slow`, { delay: 600, origin: 'right' })
+sr.reveal(`.sr-top-fast`, { delay: 200, origin: 'bottom' })
+sr.reveal(`.sr-top-slow`, { delay: 400, origin: 'bottom' })
+sr.reveal(`.sr-left-fast`, { delay: 200, origin: 'bottom' })
+sr.reveal(`.sr-left-slow`, { delay: 600, origin: 'bottom' })
+sr.reveal(`.sr-right-fast`, { delay: 200, origin: 'bottom' })
+sr.reveal(`.sr-right-slow`, { delay: 600, origin: 'bottom' })
